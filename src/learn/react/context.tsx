@@ -25,3 +25,11 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         </UserContext.Provider>
     );
 };
+
+export const useUser = () => {
+    const context = useContext(UserContext);
+    if (!context) {
+        throw new Error('useUser phải được sử dụng trong UserProvider');
+    }
+    return context;
+};
