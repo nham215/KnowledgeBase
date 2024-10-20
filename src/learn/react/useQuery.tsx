@@ -29,6 +29,11 @@ export default function UseQuery() {
         // onError: (error) => {
         //     console.error('Fetch thất bại:', error);
         // },
+        //   refetchInterval: 30000,      // Tự động gọi lại sau mỗi 30 giây
+        //   refetchOnWindowFocus: false, // Không tự động gọi lại khi chuyển về tab ứng dụng
+        //   retry: 2,                    // Thử lại 2 lần nếu có lỗi xảy ra
+        //   staleTime: 5000,             // Dữ liệu cũ (stale) trong vòng 5 giây sẽ không gọi lại API
+        //   cacheTime: 10000,            // Dữ liệu cache sẽ được giữ trong bộ nhớ 10 giây sau khi unmount component
     });
 
     if (isLoading) return <p>Loading posts...</p>;
